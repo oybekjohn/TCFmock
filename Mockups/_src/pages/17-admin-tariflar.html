@@ -1,0 +1,68 @@
+<!--
+title: Tariflar va sozlamalar — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="plans"
+mock: Admin · Tariflar va sozlamalar
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div><h1>Tariflar va sozlamalar</h1><p>Narxlar tangada belgilanadi. O‘zgarishlar saytda darhol ko‘rinadi.</p></div>
+    <div class="adm-top__actions"><button class="btn btn--primary">Saqlash</button></div>
+  </div>
+
+  <section class="panel">
+    <div class="panel__head"><div><h2>Tanga kursi</h2><p>Bosh sahifada narxning so‘mdagi taxminiy qiymatini ko‘rsatish uchun.</p></div></div>
+    <div class="field-row" style="max-width:520px">
+      <div class="field"><label>1 tanga =</label><input type="number" value="10000"></div>
+      <div class="field"><label>Valyuta</label><select><option>so‘m</option><option>USD</option></select></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><h2>Tariflar</h2><p>Foydalanuvchi kabinetda tangalar evaziga faollashtiradi.</p></div><button class="btn btn--ghost btn--sm">+ Tarif qo‘shish</button></div>
+    <div class="plan-row">
+      <div class="field"><label>Nomi</label><input type="text" value="Bitta mock imtihon"></div>
+      <div class="field"><label>Turi</label><select><option selected>Bitta imtihon</option><option>Muddatli obuna</option></select></div>
+      <div class="field"><label>Muddat (kun)</label><input type="text" value="—" disabled></div>
+      <div class="field"><label>Narx (tanga)</label><input type="number" value="3"></div>
+      <label class="switch" title="Saytda ko‘rinadi"><input type="checkbox" checked><span></span></label>
+    </div>
+    <div class="plan-row">
+      <div class="field"><label>Nomi</label><input type="text" value="1 oylik obuna"></div>
+      <div class="field"><label>Turi</label><select><option>Bitta imtihon</option><option selected>Muddatli obuna</option></select></div>
+      <div class="field"><label>Muddat (kun)</label><input type="number" value="30"></div>
+      <div class="field"><label>Narx (tanga)</label><input type="number" value="10"></div>
+      <label class="switch"><input type="checkbox" checked><span></span></label>
+    </div>
+    <div class="plan-row">
+      <div class="field"><label>Nomi <span class="tag tag--violet" style="margin-left:4px">Mashhur</span></label><input type="text" value="3 oylik obuna"></div>
+      <div class="field"><label>Turi</label><select><option>Bitta imtihon</option><option selected>Muddatli obuna</option></select></div>
+      <div class="field"><label>Muddat (kun)</label><input type="number" value="90"></div>
+      <div class="field"><label>Narx (tanga)</label><input type="number" value="25"></div>
+      <label class="switch"><input type="checkbox" checked><span></span></label>
+    </div>
+    <div class="plan-row">
+      <div class="field"><label>Nomi</label><input type="text" value="6 oylik obuna"></div>
+      <div class="field"><label>Turi</label><select><option>Bitta imtihon</option><option selected>Muddatli obuna</option></select></div>
+      <div class="field"><label>Muddat (kun)</label><input type="number" value="180"></div>
+      <div class="field"><label>Narx (tanga)</label><input type="number" value="45"></div>
+      <label class="switch"><input type="checkbox" checked><span></span></label>
+    </div>
+  </section>
+
+  <section class="panel" id="settings">
+    <div class="panel__head"><div><h2>Sayt sozlamalari</h2><p>Bosh sahifa, footer va kabinetdagi aloqa ma’lumotlari.</p></div></div>
+    <div class="adm-grid-3">
+      <div class="field"><label>Telefon</label><input type="tel" value="+998 90 123 45 67"></div>
+      <div class="field"><label>Telegram</label><input type="text" value="@tcfcanadapro"></div>
+      <div class="field"><label>E-mail</label><input type="text" value="info@tcfcanada.uz"></div>
+      <div class="field"><label>Ish vaqti</label><input type="text" value="Dush–Shan, 09:00–19:00"></div>
+      <div class="field"><label>Standart til</label><select><option>O‘zbekcha</option><option>Русский</option><option>Français</option><option>English</option></select></div>
+      <div class="field"><label>Bepul demo</label><select><option>Yoqilgan</option><option>O‘chirilgan</option></select></div>
+    </div>
+    <div class="field" style="margin-top:4px"><label>Bosh sahifadagi e’lon (ixtiyoriy)</label><input type="text" placeholder="Masalan: Yangi mock imtihon № 6 qo‘shildi!"></div>
+  </section>
+</main>

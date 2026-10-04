@@ -1,0 +1,61 @@
+<!--
+title: Foydalanuvchilar — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="users"
+mock: Admin · Foydalanuvchilar
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div><h1>Foydalanuvchilar</h1><p>Akkaunt yarating, tanga qo‘shing va obunalarni kuzating.</p></div>
+    <div class="adm-top__actions"><button class="btn btn--primary" data-open="createUser">+ Yangi foydalanuvchi</button></div>
+  </div>
+
+  <div class="cards">
+    <div class="mini"><b>214</b><small>Jami foydalanuvchilar</small></div>
+    <div class="mini"><b style="color:#07803f">96</b><small>Faol obuna</small></div>
+    <div class="mini"><b style="color:#0072b3">23</b><small>Shu oy qo‘shilgan</small></div>
+    <div class="mini"><b><span class="coin"></span>3 480</b><small>Shu oy berilgan tangalar</small></div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar">
+      <input type="search" placeholder="Ism yoki telefon bo‘yicha qidirish…">
+      <select><option>Barchasi</option><option>Faol obuna</option><option>Obunasiz</option><option>Muddati tugagan</option><option>Bloklangan</option></select>
+    </div>
+    <div class="table-scroll"><table class="tbl">
+      <thead><tr><th>Ism</th><th>Telefon</th><th>Tanga</th><th>Obuna</th><th>Oxirgi faollik</th><th></th></tr></thead>
+      <tbody>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Aziz Karimov</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 90 777 12 34</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>12</b></td><td data-label="Obuna"><span class="tag tag--green">3 oy · 28.12.2026 gacha</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">Bugun, 10:42</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Nilufar Tosheva</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 94 201 66 40</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>5</b></td><td data-label="Obuna"><span class="tag tag--green">6 oy · 02.04.2027 gacha</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">Kecha, 21:15</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Bekzod Aliyev</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 99 812 40 11</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>0</b></td><td data-label="Obuna"><span class="tag tag--red">Tugagan · 30.09.2026</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">28.09.2026</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Мария Ким</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 97 105 77 20</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>3</b></td><td data-label="Obuna"><span class="tag tag--muted">Yo‘q · 1 imtihon</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">03.10.2026</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Shahzoda Nurmatova</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 93 300 12 45</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>45</b></td><td data-label="Obuna"><span class="tag tag--muted">Yo‘q</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">Hali kirmagan</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+        <tr><td data-label="Ism"><a href="16-admin-foydalanuvchi.html"><b>Otabek Rasulov</b></a></td><td data-label="Telefon"><span class="tbl-phone">+998 90 640 08 99</span></td>
+          <td data-label="Tanga" class="num"><b style="display:inline-flex;align-items:center;gap:6px"><span class="coin"></span>2</b></td><td data-label="Obuna"><span class="tag tag--green">1 oy · 19.10.2026 gacha</span></td>
+          <td data-label="Oxirgi faollik" class="muted nowrap">01.10.2026</td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--y" data-open="addCoins">+ Tanga</button><a class="ibtn" href="16-admin-foydalanuvchi.html">Ochish</a></div></td></tr>
+      </tbody>
+    </table></div>
+    <div class="pager"><span>1–6 / 214 ta foydalanuvchi</span><div class="pager__btns"><button class="btn btn--ghost btn--sm" disabled>‹ Oldingi</button><button class="btn btn--ghost btn--sm">Keyingi ›</button></div></div>
+  </div>
+</main>
+<!--#include adm-create-user-->
+<!--#include adm-add-coins-->

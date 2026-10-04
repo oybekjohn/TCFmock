@@ -1,0 +1,18 @@
+<div class="modal" id="addCoins" role="dialog" aria-modal="true">
+  <form class="modal__box" data-mock="stay">
+    <h3>Tanga qo‘shish</h3>
+    <p>Aziz Karimov · +998 90 777 12 34</p>
+    <div class="coin-box"><b><span class="coin"></span>12</b><span>joriy balans</span></div>
+    <div class="field">
+      <label>Miqdor (ayirish uchun minus bilan yozing)</label>
+      <div class="quick" data-target="acCoins"><button type="button" data-val="3">+3</button><button type="button" class="is-active" data-val="10">+10</button><button type="button" data-val="25">+25</button><button type="button" data-val="45">+45</button></div>
+      <input type="number" id="acCoins" value="10">
+    </div>
+    <div class="field"><label>Izoh</label><input type="text" value="100 000 so‘m naqd to‘landi"></div>
+    <div class="alert alert--ok" data-msg hidden>✅ Balans yangilandi: 12 → 22 tanga.</div>
+    <div class="modal__actions">
+      <button type="button" class="btn btn--ghost" data-close>Bekor qilish</button>
+      <button type="submit" class="btn btn--primary">Qo‘shish</button>
+    </div>
+  </form>
+</div>

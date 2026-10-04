@@ -1,0 +1,25 @@
+<div class="modal" id="createUser" role="dialog" aria-modal="true">
+  <form class="modal__box" data-mock="16-admin-foydalanuvchi.html" style="max-width:500px">
+    <h3>Yangi foydalanuvchi</h3>
+    <p>Foydalanuvchi shu telefon raqami va parol bilan saytga kiradi.</p>
+    <div class="field"><label>Ism va familiya</label><input type="text" value="Aziz Karimov"></div>
+    <div class="field"><label>Telefon raqam (login)</label><input type="tel" value="+998 90 777 12 34"></div>
+    <div class="field">
+      <label>Parol</label>
+      <div style="display:flex;gap:8px"><input type="text" value="k7m2p9xa" style="flex:1;font-family:ui-monospace,monospace;letter-spacing:.08em"><button type="button" class="btn btn--ghost btn--sm">↻ Yangi</button></div>
+      <div class="field__hint">Parol avtomatik yaratildi. Foydalanuvchi uni kabinetda o‘zgartira oladi.</div>
+    </div>
+    <div class="field">
+      <label>Boshlang‘ich tanga</label>
+      <div class="quick" data-target="cuCoins"><button type="button" data-val="0">0</button><button type="button" data-val="3">+3</button><button type="button" data-val="10">+10</button><button type="button" class="is-active" data-val="25">+25</button><button type="button" data-val="45">+45</button></div>
+      <input type="number" id="cuCoins" value="25" min="0">
+    </div>
+    <div class="field"><label>Izoh (faqat admin ko‘radi)</label><input type="text" placeholder="Masalan: 250 000 so‘m Click orqali to‘landi"></div>
+    <label class="check" style="margin-bottom:6px"><input type="checkbox" checked> Arizani «Akkaunt ochildi» holatiga o‘tkazish</label>
+    <div class="alert alert--ok" data-msg hidden>✅ Foydalanuvchi yaratildi. Login: +998 90 777 12 34 · Parol: k7m2p9xa — nusxalab foydalanuvchiga yuboring.</div>
+    <div class="modal__actions">
+      <button type="button" class="btn btn--ghost" data-close>Bekor qilish</button>
+      <button type="submit" class="btn btn--primary">Yaratish</button>
+    </div>
+  </form>
+</div>

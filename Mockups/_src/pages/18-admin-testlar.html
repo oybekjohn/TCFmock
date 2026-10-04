@@ -1,0 +1,40 @@
+<!--
+title: Testlar va savollar — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="tests"
+mock: Admin · Testlar
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div><h1>Testlar va savollar</h1><p>Har bir mock imtihon: CO 39 ta + CE 39 ta savol, qiyinlik A1 → C2 tartibida.</p></div>
+    <div class="adm-top__actions"><button class="btn btn--primary">+ Yangi mock imtihon</button></div>
+  </div>
+
+  <div class="cards">
+    <div class="mini"><b>6</b><small>Mock imtihonlar</small></div>
+    <div class="mini"><b>234</b><small>CO savollar</small></div>
+    <div class="mini"><b>234</b><small>CE savollar</small></div>
+    <div class="mini"><b style="color:#8a7300">1</b><small>Qoralama</small></div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar">
+      <input type="search" placeholder="Imtihon nomi bo‘yicha qidirish…">
+      <select><option>Barcha holatlar</option><option>Nashr etilgan</option><option>Qoralama</option></select>
+    </div>
+    <div class="table-scroll"><table class="tbl">
+      <thead><tr><th>Imtihon</th><th>CO</th><th>CE</th><th>Holat</th><th>Yechilgan</th><th></th></tr></thead>
+      <tbody>
+        <tr><td data-label="Imtihon"><b>Mock № 6</b></td><td data-label="CO">39 / 39</td><td data-label="CE"><span style="color:#c0281a;font-weight:800">27 / 39</span></td><td data-label="Holat"><span class="tag tag--yellow">Qoralama</span></td><td data-label="Yechilgan">—</td><td><div class="tbl-actions"><a class="ibtn" href="19-admin-savol.html">Tahrirlash</a></div></td></tr>
+        <tr><td data-label="Imtihon"><b>Mock № 5</b></td><td data-label="CO">39 / 39</td><td data-label="CE">39 / 39</td><td data-label="Holat"><span class="tag tag--green">Nashr etilgan</span></td><td data-label="Yechilgan">48 marta</td><td><div class="tbl-actions"><a class="ibtn" href="19-admin-savol.html">Tahrirlash</a><a class="ibtn" href="13-imtihon-oldi.html">Ko‘rish</a></div></td></tr>
+        <tr><td data-label="Imtihon"><b>Mock № 4</b></td><td data-label="CO">39 / 39</td><td data-label="CE">39 / 39</td><td data-label="Holat"><span class="tag tag--green">Nashr etilgan</span></td><td data-label="Yechilgan">131 marta</td><td><div class="tbl-actions"><a class="ibtn" href="19-admin-savol.html">Tahrirlash</a><a class="ibtn" href="13-imtihon-oldi.html">Ko‘rish</a></div></td></tr>
+        <tr><td data-label="Imtihon"><b>Mock № 3</b></td><td data-label="CO">39 / 39</td><td data-label="CE">39 / 39</td><td data-label="Holat"><span class="tag tag--green">Nashr etilgan</span></td><td data-label="Yechilgan">176 marta</td><td><div class="tbl-actions"><a class="ibtn" href="19-admin-savol.html">Tahrirlash</a><a class="ibtn" href="13-imtihon-oldi.html">Ko‘rish</a></div></td></tr>
+        <tr><td data-label="Imtihon"><b>Bepul demo</b> <span class="tag tag--violet">Demo</span></td><td data-label="CO">10</td><td data-label="CE">10</td><td data-label="Holat"><span class="tag tag--green">Nashr etilgan</span></td><td data-label="Yechilgan">1 204 marta</td><td><div class="tbl-actions"><a class="ibtn" href="19-admin-savol.html">Tahrirlash</a><a class="ibtn" href="02-test-tanlash.html">Ko‘rish</a></div></td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted small" style="margin-top:12px">Imtihon faqat ikkala bo‘limda 39 tadan savol bo‘lganda nashr etiladi.</p>
+  </div>
+</main>

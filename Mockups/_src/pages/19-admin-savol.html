@@ -1,0 +1,83 @@
+<!--
+title: Savol tahriri — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="tests"
+mock: Admin · Savol tahriri
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div>
+      <div class="crumbs"><a href="18-admin-testlar.html">Testlar</a> / Mock № 6 / CE</div>
+      <h1>Savol 28 / 39</h1>
+    </div>
+    <div class="adm-top__actions">
+      <button class="btn btn--danger">O‘chirish</button>
+      <button class="btn btn--ghost">Saqlash</button>
+      <button class="btn btn--primary">Saqlash va keyingisi →</button>
+    </div>
+  </div>
+
+  <div class="q-editor">
+    <div data-tabs>
+      <section class="panel">
+        <div class="field-row" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="field"><label>Bo‘lim</label>
+            <div class="seg" style="display:flex"><button type="button" data-tab="co">CO</button><button type="button" class="is-active" data-tab="ce">CE</button></div>
+          </div>
+          <div class="field"><label>Daraja</label><select><option>A1</option><option>A2</option><option>B1</option><option selected>B2</option><option>C1</option><option>C2</option></select></div>
+          <div class="field"><label>Tartib raqami</label><input type="number" value="28" min="1" max="39"></div>
+        </div>
+
+        <div data-pane="ce">
+          <div class="field"><label>Hujjat matni (fransuzcha)</label>
+            <textarea rows="7">Avis aux résidents — Collecte des matières organiques
+À compter du 3 novembre, la collecte du bac brun aura lieu chaque jeudi plutôt que le lundi. Les résidents sont priés de déposer leur bac en bordure de rue la veille, après 19 h. Les sacs de plastique, même compostables, ne seront plus acceptés.</textarea>
+          </div>
+          <div class="drop">🖼️ Rasm qo‘shish (ixtiyoriy) — faylni bu yerga tashlang yoki <span class="link">tanlang</span></div>
+        </div>
+        <div data-pane="co" hidden>
+          <div class="field"><label>Audio fayl (MP3, bir marta eshittiriladi)</label>
+            <div class="audio-file"><span class="coin" style="background:var(--violet);color:#fff"></span>document-28.mp3 · 0:41 · 412 KB <button type="button" class="ibtn" style="margin-left:auto">Almashtirish</button></div>
+          </div>
+          <div class="field"><label>Audio matni (transkripsiya)</label><textarea rows="4">Bonjour, ici le service des loisirs de la Ville de Gatineau…</textarea></div>
+        </div>
+
+        <div class="field"><label>Savol</label><input type="text" value="Que doivent faire les résidents à partir du 3 novembre ?"></div>
+        <label style="display:block;font-size:13.5px;font-weight:700;color:var(--ink-soft);margin-bottom:8px">Javob variantlari — to‘g‘risini belgilang</label>
+        <div class="ans-row"><input type="radio" name="ok"><b>A</b><input type="text" value="Sortir leur bac le lundi matin."></div>
+        <div class="ans-row is-right"><input type="radio" name="ok" checked><b>B</b><input type="text" value="Placer le bac brun dehors le mercredi soir."></div>
+        <div class="ans-row"><input type="radio" name="ok"><b>C</b><input type="text" value="Utiliser des sacs compostables."></div>
+        <div class="ans-row"><input type="radio" name="ok"><b>D</b><input type="text" value="Apporter leurs déchets à l’écocentre."></div>
+      </section>
+
+      <section class="panel" data-tabs>
+        <div class="panel__head"><div><h2>Izoh (natija sahifasida chiqadi)</h2><p>Foydalanuvchi qaysi tilni tanlasa, o‘sha tildagi izoh ko‘rinadi.</p></div></div>
+        <div class="tabs"><button class="is-active" data-tab="uz">UZ</button><button data-tab="ru">RU</button><button data-tab="fr">FR</button><button data-tab="en">EN</button></div>
+        <div data-pane="uz"><textarea class="ta">Yig‘ish payshanba kuni bo‘ladi, idishni esa «la veille, après 19 h» — ya’ni chorshanba kechqurun chiqarish kerak.</textarea></div>
+        <div data-pane="ru" hidden><textarea class="ta">Вывоз — в четверг, а бак нужно выставить «la veille, après 19 h», то есть в среду вечером.</textarea></div>
+        <div data-pane="fr" hidden><textarea class="ta">La collecte a lieu le jeudi ; le bac doit être déposé « la veille, après 19 h », donc le mercredi soir.</textarea></div>
+        <div data-pane="en" hidden><textarea class="ta">Collection is on Thursday; the bin must go out “la veille, après 19 h”, i.e. on Wednesday evening.</textarea></div>
+      </section>
+    </div>
+
+    <section class="panel" style="position:sticky;top:20px">
+      <div class="panel__head"><h2>Ko‘rinishi</h2><span class="tag tag--muted">Foydalanuvchi ekrani</span></div>
+      <div class="x-doc" style="font-size:14.5px;padding:18px;margin-bottom:14px">
+        <div class="x-doc__label"><span>Document 28</span></div>
+        <h4 style="font-size:16px">Avis aux résidents — Collecte des matières organiques</h4>
+        <p>À compter du 3 novembre, la collecte du bac brun aura lieu chaque jeudi plutôt que le lundi. Les résidents sont priés de déposer leur bac en bordure de rue la veille, après 19 h…</p>
+      </div>
+      <div class="x-qnum">Question 28</div>
+      <div class="x-prompt" style="font-size:17px">Que doivent faire les résidents à partir du 3 novembre ?</div>
+      <div class="opts">
+        <div class="opt"><span class="opt__k">A</span><span>Sortir leur bac le lundi matin.</span></div>
+        <div class="opt is-sel"><span class="opt__k">B</span><span>Placer le bac brun dehors le mercredi soir.</span></div>
+        <div class="opt"><span class="opt__k">C</span><span>Utiliser des sacs compostables.</span></div>
+        <div class="opt"><span class="opt__k">D</span><span>Apporter leurs déchets à l’écocentre.</span></div>
+      </div>
+    </section>
+  </div>
+</main>

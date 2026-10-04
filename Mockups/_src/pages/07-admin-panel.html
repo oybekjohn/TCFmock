@@ -1,0 +1,60 @@
+<!--
+title: Arizalar — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="leads"
+mock: Admin · Arizalar
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div><h1>Arizalar</h1><p>Saytdagi formadan kelgan murojaatlar. Bog‘laning va akkaunt oching.</p></div>
+    <div class="adm-top__actions"><a class="btn btn--ghost" href="#">CSV yuklab olish</a></div>
+  </div>
+
+  <div class="cards">
+    <div class="mini"><b>18</b><small>Jami arizalar</small></div>
+    <div class="mini"><b style="color:#0072b3">7</b><small>Yangi</small></div>
+    <div class="mini"><b style="color:#8a7300">5</b><small>Bog‘lanildi</small></div>
+    <div class="mini"><b style="color:#07803f">4</b><small>Akkaunt ochildi</small></div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar">
+      <input type="search" placeholder="Ism yoki telefon bo‘yicha qidirish…">
+      <select><option>Barcha holatlar</option><option>Yangi</option><option>Bog‘lanildi</option><option>Akkaunt ochildi</option><option>Rad etilgan</option></select>
+    </div>
+    <div class="table-scroll"><table class="tbl">
+      <thead><tr><th>#</th><th>Sana</th><th>Ism</th><th>Telefon</th><th>Til</th><th>Holat</th><th></th></tr></thead>
+      <tbody>
+        <tr><td data-label="#">18</td><td data-label="Sana" class="muted nowrap">04.10.26 14:22</td><td data-label="Ism"><b>Dilnoza Rahimova</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998901234567">+998 90 123 45 67</a></td><td data-label="Til"><b class="small">UZ</b></td>
+          <td data-label="Holat"><select class="s-new" aria-label="Holat"><option selected>Yangi</option><option>Bog‘lanildi</option><option>Akkaunt ochildi</option><option>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--g" data-open="createUser">Akkaunt ochish</button><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+        <tr><td data-label="#">17</td><td data-label="Sana" class="muted nowrap">04.10.26 12:05</td><td data-label="Ism"><b>Javohir Mirzayev</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998934471822">+998 93 447 18 22</a></td><td data-label="Til"><b class="small">UZ</b></td>
+          <td data-label="Holat"><select class="s-new" aria-label="Holat"><option selected>Yangi</option><option>Bog‘lanildi</option><option>Akkaunt ochildi</option><option>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--g" data-open="createUser">Akkaunt ochish</button><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+        <tr><td data-label="#">16</td><td data-label="Sana" class="muted nowrap">03.10.26 19:40</td><td data-label="Ism"><b>Малика Саидова</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998973305509">+998 97 330 55 09</a></td><td data-label="Til"><b class="small">RU</b></td>
+          <td data-label="Holat"><select class="s-contacted" aria-label="Holat"><option>Yangi</option><option selected>Bog‘lanildi</option><option>Akkaunt ochildi</option><option>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--g" data-open="createUser">Akkaunt ochish</button><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+        <tr><td data-label="#">15</td><td data-label="Sana" class="muted nowrap">28.09.26 16:11</td><td data-label="Ism"><b>Aziz Karimov</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998907771234">+998 90 777 12 34</a></td><td data-label="Til"><b class="small">UZ</b></td>
+          <td data-label="Holat"><select class="s-created" aria-label="Holat"><option>Yangi</option><option>Bog‘lanildi</option><option selected>Akkaunt ochildi</option><option>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><a class="ibtn" href="16-admin-foydalanuvchi.html">Profil</a><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+        <tr><td data-label="#">14</td><td data-label="Sana" class="muted nowrap">27.09.26 09:58</td><td data-label="Ism"><b>Nilufar Tosheva</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998942016640">+998 94 201 66 40</a></td><td data-label="Til"><b class="small">EN</b></td>
+          <td data-label="Holat"><select class="s-created" aria-label="Holat"><option>Yangi</option><option>Bog‘lanildi</option><option selected>Akkaunt ochildi</option><option>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><a class="ibtn" href="16-admin-foydalanuvchi.html">Profil</a><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+        <tr><td data-label="#">13</td><td data-label="Sana" class="muted nowrap">26.09.26 21:30</td><td data-label="Ism"><b>Sardor Yusupov</b></td>
+          <td data-label="Telefon"><a class="tbl-phone" href="tel:+998915550317">+998 91 555 03 17</a></td><td data-label="Til"><b class="small">UZ</b></td>
+          <td data-label="Holat"><select class="s-rejected" aria-label="Holat"><option>Yangi</option><option>Bog‘lanildi</option><option>Akkaunt ochildi</option><option selected>Rad etilgan</option></select></td>
+          <td><div class="tbl-actions"><button class="ibtn ibtn--r">O‘chirish</button></div></td></tr>
+      </tbody>
+    </table></div>
+    <div class="pager"><span>1–6 / 18 ta ariza</span><div class="pager__btns"><button class="btn btn--ghost btn--sm" disabled>‹ Oldingi</button><button class="btn btn--ghost btn--sm">Keyingi ›</button></div></div>
+  </div>
+</main>
+<!--#include adm-create-user-->

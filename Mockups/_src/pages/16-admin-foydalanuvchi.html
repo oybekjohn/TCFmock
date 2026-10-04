@@ -1,0 +1,91 @@
+<!--
+title: Aziz Karimov — Admin — TCF Canada Pro
+i18n: no
+css: admin
+body: class="adm" data-page="users"
+mock: Admin · Foydalanuvchi profili
+-->
+<!--#include adm-side-->
+<main class="adm-main">
+  <div class="adm-top">
+    <!--#include adm-burger-->
+    <div>
+      <div class="crumbs"><a href="15-admin-foydalanuvchilar.html">Foydalanuvchilar</a> / Profil</div>
+      <h1>Aziz Karimov</h1>
+    </div>
+    <div class="adm-top__actions">
+      <button class="btn btn--ghost" data-open="resetPw">Parolni tiklash</button>
+      <button class="btn btn--danger">Bloklash</button>
+    </div>
+  </div>
+
+  <div class="adm-grid">
+    <div>
+      <section class="panel">
+        <h2 style="margin-bottom:14px">Ma’lumotlar</h2>
+        <dl class="kv">
+          <dt>Telefon (login)</dt><dd>+998 90 777 12 34</dd>
+          <dt>Interfeys tili</dt><dd>O‘zbekcha</dd>
+          <dt>Ro‘yxatdan o‘tgan</dt><dd>29.09.2026 · admin</dd>
+          <dt>Oxirgi kirish</dt><dd>Bugun, 10:42</dd>
+          <dt>Ariza</dt><dd><a class="link" href="07-admin-panel.html">#15 · 28.09.2026</a></dd>
+        </dl>
+      </section>
+      <section class="panel">
+        <h2 style="margin-bottom:14px">Tanga balansi</h2>
+        <div class="coin-box"><b><span class="coin"></span>12</b><span>≈ 120 000 so‘m</span></div>
+        <form data-mock="stay">
+          <div class="quick" data-target="pfCoins"><button type="button" data-val="3">+3</button><button type="button" class="is-active" data-val="10">+10</button><button type="button" data-val="25">+25</button><button type="button" data-val="45">+45</button><button type="button" data-val="-1">−1</button></div>
+          <div class="field-row">
+            <div class="field"><label>Miqdor</label><input type="number" id="pfCoins" value="10"></div>
+            <div class="field"><label>Izoh</label><input type="text" placeholder="To‘lov ma’lumoti"></div>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit">Balansni yangilash</button>
+          <div class="alert alert--ok" data-msg hidden style="margin-top:10px">✅ Balans yangilandi: 12 → 22 tanga.</div>
+        </form>
+      </section>
+    </div>
+    <div>
+      <section class="panel">
+        <div class="panel__head"><h2>Obuna</h2><span class="tag tag--green">Faol</span></div>
+        <dl class="kv" style="margin-bottom:14px">
+          <dt>Tarif</dt><dd>3 oylik obuna</dd>
+          <dt>Muddat</dt><dd>29.09.2026 – 28.12.2026 (85 kun qoldi)</dd>
+          <dt>Alohida imtihonlar</dt><dd>1 ta (ishlatilmagan)</dd>
+        </dl>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn--ghost btn--sm">Muddatni qo‘lda o‘zgartirish</button><button class="btn btn--danger btn--sm">Obunani to‘xtatish</button></div>
+      </section>
+      <section class="panel">
+        <h2 style="margin-bottom:12px">Tanga tarixi</h2>
+        <div class="table-scroll"><table class="tbl">
+          <thead><tr><th>Sana</th><th>Amal</th><th>Kim</th><th>Tanga</th><th>Balans</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Sana" class="nowrap">30.09.2026</td><td data-label="Amal">Bitta mock imtihon</td><td data-label="Kim">Foydalanuvchi</td><td data-label="Tanga" class="tx-minus">−3</td><td data-label="Balans">12</td></tr>
+            <tr><td data-label="Sana" class="nowrap">29.09.2026</td><td data-label="Amal">3 oylik obuna</td><td data-label="Kim">Foydalanuvchi</td><td data-label="Tanga" class="tx-minus">−25</td><td data-label="Balans">15</td></tr>
+            <tr><td data-label="Sana" class="nowrap">29.09.2026</td><td data-label="Amal">To‘ldirish · 400 000 so‘m, Click</td><td data-label="Kim">admin</td><td data-label="Tanga" class="tx-plus">+40</td><td data-label="Balans">40</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+      <section class="panel">
+        <h2 style="margin-bottom:12px">Imtihon natijalari</h2>
+        <div class="table-scroll"><table class="tbl">
+          <thead><tr><th>Sana</th><th>Imtihon</th><th>CO</th><th>CE</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Sana">02.10.2026</td><td data-label="Imtihon">Mock № 4</td><td data-label="CO">NCLC 7 · 486</td><td data-label="CE">NCLC 8 · 501</td></tr>
+            <tr><td data-label="Sana">25.09.2026</td><td data-label="Imtihon">Mock № 3</td><td data-label="CO">NCLC 6 · 452</td><td data-label="CE">NCLC 7 · 470</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div class="modal" id="resetPw" role="dialog" aria-modal="true">
+  <form class="modal__box" data-mock="stay">
+    <h3>Parolni tiklash</h3>
+    <p>Yangi parol yaratiladi. Eski parol bilan kirib bo‘lmaydi.</p>
+    <div class="field"><label>Yangi parol</label><div style="display:flex;gap:8px"><input type="text" value="r4t8w2qe" style="flex:1;font-family:ui-monospace,monospace;letter-spacing:.08em"><button type="button" class="btn btn--ghost btn--sm">↻</button></div></div>
+    <div class="alert alert--ok" data-msg hidden>✅ Parol yangilandi. Uni foydalanuvchiga yuboring.</div>
+    <div class="modal__actions"><button type="button" class="btn btn--ghost" data-close>Bekor qilish</button><button type="submit" class="btn btn--primary">Saqlash</button></div>
+  </form>
+</div>

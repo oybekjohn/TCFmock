@@ -1,0 +1,27 @@
+<!--
+title: Admin kirish — TCF Canada Pro
+i18n: no
+body: class="auth"
+mock: Admin · Kirish
+-->
+<header class="nav nav--static">
+  <div class="container nav__inner">
+    <a href="01-landing.html" class="logo"><span class="logo__mark">TCF</span><span>TCF Canada Pro <span class="tag tag--yellow" style="margin-left:4px">Admin</span></span></a>
+  </div>
+</header>
+<main class="auth__main">
+  <div class="auth__card">
+    <form class="form-card" data-mock="07-admin-panel.html" novalidate>
+      <h1 style="font-size:24px;margin-bottom:6px">Admin panel</h1>
+      <p class="form-card__hint">Boshqaruv paneliga kirish uchun login va parolni kiriting.</p>
+      <div class="field"><label for="a-login">Login</label><input type="text" id="a-login" autocomplete="username" value="admin"></div>
+      <div class="field">
+        <label for="a-pass">Parol</label>
+        <div class="pw"><input type="password" id="a-pass" autocomplete="current-password" value="••••••••••"><button type="button" aria-label="Ko‘rsatish"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block btn--lg">Kirish</button>
+      <div class="alert alert--ok" data-msg hidden style="margin-top:12px">Kirish muvaffaqiyatli…</div>
+      <p class="form-note">5 marta noto‘g‘ri urinishdan so‘ng kirish 15 daqiqaga bloklanadi.</p>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,92 @@
+<!--
+title_key: res.title
+body: class="app"
+mock: Imtihon · Natija
+-->
+<!--#include nav-app-->
+
+<main class="app__main">
+  <div class="container" style="max-width:860px">
+    <div class="res-hero">
+      <div class="res-hero__top">
+        <h1><span data-i18n="res.h1"></span> · Mock № 5</h1>
+        <p>04.10.2026 · CO + CE · 78 <span data-i18n="u.questions"></span></p>
+      </div>
+      <div class="res-secs">
+        <div class="res-sec">
+          <small data-i18n="nclc.co"></small>
+          <div class="res-sec__nclc"><span>NCLC</span>8</div>
+          <div class="res-sec__score">505 / 699</div>
+        </div>
+        <div class="res-sec">
+          <small data-i18n="nclc.ce"></small>
+          <div class="res-sec__nclc"><span>NCLC</span>8</div>
+          <div class="res-sec__score">512 / 699</div>
+        </div>
+      </div>
+      <div class="res-verdict" data-i18n="res.ok"></div>
+    </div>
+
+    <div class="res-grid">
+      <div class="res-cell"><b class="text-grad">63 / 78</b><small data-i18n="res.correct"></small></div>
+      <div class="res-cell"><b class="text-grad">1:29:12</b><small data-i18n="res.time"></small></div>
+      <div class="res-cell"><b class="text-grad">2</b><small data-i18n="res.skipped"></small></div>
+    </div>
+    <div class="alert alert--warn" style="margin-bottom:26px">⚠️ <span data-i18n="res.note"></span></div>
+
+    <section class="card" style="margin-bottom:22px" data-tabs>
+      <div class="card__head"><h3 data-i18n="res.bylevel"></h3></div>
+      <div class="tabs"><button class="is-active" data-tab="co">CO</button><button data-tab="ce">CE</button></div>
+      <div data-pane="co">
+        <div class="lvl-row"><b>A1</b><div class="lvl-bar"><i style="width:100%"></i></div><span>6/6</span></div>
+        <div class="lvl-row"><b>A2</b><div class="lvl-bar"><i style="width:88%"></i></div><span>7/8</span></div>
+        <div class="lvl-row"><b>B1</b><div class="lvl-bar"><i style="width:90%"></i></div><span>9/10</span></div>
+        <div class="lvl-row"><b>B2</b><div class="lvl-bar"><i style="width:75%"></i></div><span>6/8</span></div>
+        <div class="lvl-row"><b>C1</b><div class="lvl-bar"><i style="width:60%"></i></div><span>3/5</span></div>
+        <div class="lvl-row"><b>C2</b><div class="lvl-bar"><i style="width:0"></i></div><span>0/2</span></div>
+      </div>
+      <div data-pane="ce" hidden>
+        <div class="lvl-row"><b>A1</b><div class="lvl-bar"><i style="width:100%"></i></div><span>6/6</span></div>
+        <div class="lvl-row"><b>A2</b><div class="lvl-bar"><i style="width:100%"></i></div><span>8/8</span></div>
+        <div class="lvl-row"><b>B1</b><div class="lvl-bar"><i style="width:90%"></i></div><span>9/10</span></div>
+        <div class="lvl-row"><b>B2</b><div class="lvl-bar"><i style="width:75%"></i></div><span>6/8</span></div>
+        <div class="lvl-row"><b>C1</b><div class="lvl-bar"><i style="width:60%"></i></div><span>3/5</span></div>
+        <div class="lvl-row"><b>C2</b><div class="lvl-bar"><i style="width:0"></i></div><span>0/2</span></div>
+      </div>
+    </section>
+
+    <section data-tabs>
+      <div class="card__head" style="margin-bottom:6px"><h3 data-i18n="res.review"></h3></div>
+      <div class="tabs"><button class="is-active" data-tab="bad" data-i18n="res.only_wrong"></button><button data-tab="all" data-i18n="res.all"></button></div>
+      <div data-pane="bad">
+        <div class="rev bad">
+          <div class="rev__top"><span class="rev__n">✕</span><span class="rev__q">CO · 9. Selon la présentatrice, que doivent faire les automobilistes ce week-end ?</span></div>
+          <div class="rev__a bad"><em data-i18n="res.your"></em><span>C. Faire le plein d’essence avant vendredi.</span></div>
+          <div class="rev__a good"><em data-i18n="res.right"></em><span>A. Éviter l’autoroute 20 en direction de Québec.</span></div>
+          <div class="rev__extra"><b data-i18n="res.transcript"></b>« … En raison des travaux sur l’autoroute 20, direction Québec, nous vous conseillons d’emprunter la route 132 tout le week-end … »</div>
+          <div class="rev__extra"><b data-i18n="res.why"></b><span data-i18n="res.why1"></span></div>
+        </div>
+        <div class="rev bad">
+          <div class="rev__top"><span class="rev__n">✕</span><span class="rev__q">CE · 14. Quelle idée l’auteur met-il en avant ?</span></div>
+          <div class="rev__a bad"><em data-i18n="res.your"></em><span>D. Les organismes d’accueil exigent un niveau trop élevé.</span></div>
+          <div class="rev__a good"><em data-i18n="res.right"></em><span>C. Le manque de préparation encadrée pénalise des candidats compétents.</span></div>
+          <div class="rev__extra"><b data-i18n="res.passage"></b>« … ce n’est pas tant la difficulté des examens qui pose problème que l’absence d’un accompagnement adapté pour s’y préparer. »</div>
+          <div class="rev__extra"><b data-i18n="res.why"></b><span data-i18n="res.why2"></span></div>
+        </div>
+      </div>
+      <div data-pane="all" hidden>
+        <div class="rev ok">
+          <div class="rev__top"><span class="rev__n">✓</span><span class="rev__q">CE · 12. Pendant les travaux, les nouveaux arrivants inscrits aux ateliers de conversation devront…</span></div>
+          <div class="rev__a good"><em data-i18n="res.your"></em><span>B. se rendre dans un autre bâtiment.</span></div>
+          <div class="rev__extra"><b data-i18n="res.why"></b><span data-i18n="res.why3"></span></div>
+        </div>
+        <p class="muted small" style="text-align:center;margin:10px 0 0" data-i18n="res.more"></p>
+      </div>
+    </section>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
+      <a href="11-kabinet.html" class="btn btn--ghost btn--lg" style="flex:1 1 220px" data-i18n="res.back"></a>
+      <a href="13-imtihon-oldi.html" class="btn btn--primary btn--lg" style="flex:1 1 220px" data-i18n="res.again"></a>
+    </div>
+  </div>
+</main>

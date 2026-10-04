@@ -1,0 +1,108 @@
+<!--
+title_key: shop.title
+body: class="app"
+mock: Foydalanuvchi · Obuna va tangalar
+-->
+<!--#include nav-app-->
+
+<main class="app__main">
+  <div class="container">
+    <div class="page-head" style="display:flex;gap:16px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap">
+      <div>
+        <h1 data-i18n="app.nav_plans"></h1>
+        <p data-i18n="shop.lead"></p>
+      </div>
+      <div class="balance-pill" style="height:46px;font-size:17px"><span class="coin"></span><span><span data-i18n="cab.balance"></span>: 12</span></div>
+    </div>
+
+    <div class="alert alert--info" style="margin-bottom:26px">
+      <span data-i18n="shop.active_note"></span>
+    </div>
+
+    <div class="plans" style="margin-bottom:26px">
+      <article class="plan plan--single">
+        <div class="plan__name" data-i18n="plan.single"></div>
+        <div class="plan__price"><span class="coin"></span>3 <span data-i18n="u.coins3"></span></div>
+        <div class="plan__sum" data-i18n="plan.single_f3"></div>
+        <ul><li data-i18n="plan.single_f1"></li><li data-i18n="plan.f_result"></li></ul>
+        <button class="btn btn--outline btn--block" data-open="buyModal" data-i18n="shop.buy"></button>
+      </article>
+      <article class="plan">
+        <div class="plan__name" data-i18n="plan.m1"></div>
+        <div class="plan__price"><span class="coin"></span>10 <span data-i18n="u.coins"></span></div>
+        <div class="plan__sum">30 <span data-i18n="u.days"></span></div>
+        <ul><li data-i18n="plan.f_unlim"></li><li data-i18n="plan.f_explain"></li></ul>
+        <button class="btn btn--primary btn--block" data-open="actModal" data-i18n="shop.activate"></button>
+      </article>
+      <article class="plan">
+        <div class="plan__name" data-i18n="plan.m3"></div>
+        <div class="plan__price"><span class="coin"></span>25 <span data-i18n="u.coins"></span></div>
+        <div class="plan__sum">90 <span data-i18n="u.days"></span> · <b data-i18n="plan.save17"></b></div>
+        <ul><li data-i18n="plan.f_unlim"></li><li data-i18n="plan.f_explain"></li></ul>
+        <button class="btn btn--ghost btn--block" disabled><span><span data-i18n="shop.need"></span>: 13</span></button>
+      </article>
+      <article class="plan">
+        <div class="plan__name" data-i18n="plan.m6"></div>
+        <div class="plan__price"><span class="coin"></span>45 <span data-i18n="u.coins"></span></div>
+        <div class="plan__sum">180 <span data-i18n="u.days"></span> · <b data-i18n="plan.save25"></b></div>
+        <ul><li data-i18n="plan.f_unlim"></li><li data-i18n="plan.f_explain"></li></ul>
+        <button class="btn btn--ghost btn--block" disabled><span><span data-i18n="shop.need"></span>: 33</span></button>
+      </article>
+    </div>
+
+    <div class="grid-2 grid-2--wide">
+      <section class="card">
+        <div class="card__head"><h3 data-i18n="shop.tx_h"></h3></div>
+        <div class="table-scroll">
+          <table class="hist">
+            <thead><tr><th data-i18n="cab.date"></th><th data-i18n="shop.tx_what"></th><th data-i18n="u.coins_cap"></th><th data-i18n="cab.balance"></th></tr></thead>
+            <tbody>
+              <tr><td>30.09.2026</td><td data-i18n="shop.tx_exam"></td><td class="tx-minus">−3</td><td>12</td></tr>
+              <tr><td>29.09.2026</td><td data-i18n="shop.tx_m3"></td><td class="tx-minus">−25</td><td>15</td></tr>
+              <tr><td>29.09.2026</td><td data-i18n="shop.tx_admin"></td><td class="tx-plus">+40</td><td>40</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h3 data-i18n="shop.need_h"></h3>
+        <p class="muted small" style="margin-bottom:16px" data-i18n="shop.need_p"></p>
+        <a href="https://t.me/tcfcanadapro" target="_blank" rel="noopener" class="btn btn--tg btn--block" style="margin-bottom:10px"><span data-i18n="contact.tg"></span></a>
+        <a href="tel:+998901234567" class="btn btn--ghost btn--block">+998 90 123 45 67</a>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div class="modal" id="actModal" role="dialog" aria-modal="true">
+  <div class="modal__box">
+    <h3 data-i18n="shop.act_h"></h3>
+    <p data-i18n="shop.act_p"></p>
+    <div class="summary">
+      <div><span data-i18n="shop.plan"></span><b data-i18n="plan.m1"></b></div>
+      <div><span data-i18n="shop.price"></span><b><span class="coin"></span>10</b></div>
+      <div><span data-i18n="cab.balance"></span><b>12 → 2</b></div>
+      <div><span data-i18n="shop.new_end"></span><b>27.01.2027</b></div>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" data-close data-i18n="u.cancel"></button>
+      <a href="11-kabinet.html" class="btn btn--primary" data-i18n="shop.confirm"></a>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="buyModal" role="dialog" aria-modal="true">
+  <div class="modal__box">
+    <h3 data-i18n="shop.buy_h"></h3>
+    <p data-i18n="shop.buy_p"></p>
+    <div class="summary">
+      <div><span data-i18n="shop.plan"></span><b data-i18n="plan.single"></b></div>
+      <div><span data-i18n="shop.price"></span><b><span class="coin"></span>3</b></div>
+      <div><span data-i18n="cab.balance"></span><b>12 → 9</b></div>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost" data-close data-i18n="u.cancel"></button>
+      <a href="13-imtihon-oldi.html" class="btn btn--primary" data-i18n="shop.confirm"></a>
+    </div>
+  </div>
+</div>

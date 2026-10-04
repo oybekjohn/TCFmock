@@ -1,0 +1,42 @@
+<!--
+title_key: login.title
+body: class="auth"
+mock: Foydalanuvchi · Kirish
+-->
+<header class="nav nav--static">
+  <div class="container nav__inner">
+    <!--#include logo-->
+    <div class="nav__right">
+      <!--#include lang-->
+    </div>
+  </div>
+</header>
+
+<main class="auth__main">
+  <div class="auth__card">
+    <form class="form-card" data-mock="11-kabinet.html" novalidate>
+      <h1 style="font-size:24px;margin-bottom:6px" data-i18n="login.h1"></h1>
+      <p class="form-card__hint" data-i18n="login.hint"></p>
+      <div class="field">
+        <label for="l-phone" data-i18n="form.phone"></label>
+        <input type="tel" id="l-phone" autocomplete="tel" value="+998 90 777 12 34">
+      </div>
+      <div class="field">
+        <label for="l-pass" data-i18n="login.pass"></label>
+        <div class="pw">
+          <input type="password" id="l-pass" autocomplete="current-password" value="k7m2p9xa">
+          <button type="button" aria-label="Show"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </div>
+      </div>
+      <label class="check" style="margin:4px 0 18px"><input type="checkbox" checked> <span data-i18n="login.remember"></span></label>
+      <button type="submit" class="btn btn--primary btn--block btn--lg" data-i18n="login.submit"></button>
+      <div class="alert alert--ok" data-msg hidden style="margin-top:12px" data-i18n="login.ok"></div>
+      <div class="alert alert--info" style="margin-top:16px">
+        <b data-i18n="login.forgot_h"></b>
+        <span data-i18n="login.forgot_p"></span>
+        <a class="link" href="https://t.me/tcfcanadapro" target="_blank" rel="noopener">@tcfcanadapro</a>
+      </div>
+    </form>
+    <p class="auth__alt"><span data-i18n="login.no_acc"></span> <a class="link" href="01-landing.html#contact" data-i18n="login.no_acc_link"></a></p>
+  </div>
+</main>
