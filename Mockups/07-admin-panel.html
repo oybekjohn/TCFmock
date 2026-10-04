@@ -163,7 +163,7 @@ p { margin: 0; }
 .nav.is-stuck { border-bottom-color: var(--line); box-shadow: 0 4px 20px rgba(40,0,77,.05); }
 .nav__inner { height: var(--nav-h); display: flex; align-items: center; gap: 24px; }
 
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -.02em; white-space: nowrap; min-width: 0; }
 .logo__mark {
   width: 38px; height: 38px; border-radius: 11px;
   background: linear-gradient(140deg, var(--blue), var(--violet));
@@ -477,6 +477,7 @@ table.nclc td:first-child { font-weight: 800; }
 .footer p { font-size: 15px; max-width: 320px; }
 .footer h4 { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: #fff; margin-bottom: 16px; }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.footer li { font-size: 15px; }
 .footer a { font-size: 15px; transition: color .15s; }
 .footer a:hover { color: var(--yellow); }
 .footer__social { display: flex; gap: 10px; margin-top: 14px; }
@@ -552,6 +553,11 @@ table.nclc td:first-child { font-weight: 800; }
   .cta { padding: 44px 24px; border-radius: var(--radius-lg); }
   .lead-form { padding: 22px 20px; }
   .logo__text-full { display: none; }
+  .container { padding-inline: 16px; }
+  .nav__inner { gap: 12px; }
+  .nav__right { gap: 8px; }
+  .logo { font-size: 17px; }
+  .lang button { padding: 7px 9px; }
   .float-card { padding: 10px 13px; font-size: 13px; }
   .tg-fab { width: 52px; height: 52px; right: 16px; bottom: 16px; }
 }
@@ -699,7 +705,7 @@ table.nclc td:first-child { font-weight: 800; }
 .res-hero::before { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,.1); top: -150px; right: -70px; }
 .res-hero > * { position: relative; z-index: 1; }
 .res-nclc { font-size: clamp(56px, 13vw, 88px); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
-.res-nclc small { font-size: 22px; font-weight: 800; opacity: .85; }
+.res-nclc small { font-size: 22px; font-weight: 800; opacity: .85; letter-spacing: .04em; margin-right: 4px; }
 .res-hero h2 { font-size: 20px; opacity: .9; font-weight: 700; margin-bottom: 8px; }
 .res-verdict { margin-top: 18px; background: rgba(255,255,255,.16); border-radius: 16px; padding: 14px 20px; font-size: 15.5px; font-weight: 700; display: inline-block; }
 
@@ -733,7 +739,8 @@ table.nclc td:first-child { font-weight: 800; }
 @media (max-width: 720px) {
   .t-picks { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
-  .t-bar__title small { display: none; }
+  .t-bar__title { display: none; }
+  .t-bar__mid { gap: 8px; min-width: 0; }
   .t-bar__in { gap: 10px; height: 60px; }
   .t-timer { font-size: 15px; padding: 7px 13px; }
   .t-count { font-size: 13px; }
@@ -741,17 +748,27 @@ table.nclc td:first-child { font-weight: 800; }
   .t-stage { padding-top: 26px; }
   .rev__a { flex-direction: column; gap: 2px; }
 }
+@media (max-width: 480px) {
+  .t-count > span { display: none; }
+  .t-timer { padding: 7px 11px; gap: 6px; }
+  .t-foot .btn { padding: 14px 22px; }
+}
 
 
-/* --- mockup navigatsiyasi --- */
-.mk-back{position:fixed;left:18px;bottom:18px;z-index:999;display:inline-flex;align-items:center;
+/* --- mockup navigatsiyasi (sahifa tugmalarini yopmasligi uchun pastki chap burchakda) --- */
+.mk-dock{position:fixed;left:18px;bottom:18px;z-index:999;display:flex;align-items:center;gap:8px;pointer-events:none}
+.mk-dock>*{pointer-events:auto}
+.mk-dock--raised{bottom:96px}
+.mk-back{display:inline-flex;align-items:center;
   gap:8px;background:#28004d;color:#fff;padding:11px 18px;border-radius:999px;font-weight:800;
   font-size:14px;text-decoration:none;box-shadow:0 10px 28px rgba(40,0,77,.35);transition:transform .18s}
 .mk-back:hover{transform:translateY(-2px)}
-.mk-tag{position:fixed;right:18px;top:18px;z-index:999;background:#ffec68;color:#6b5a00;
+.mk-tag{position:absolute;left:0;bottom:calc(100% + 8px);background:#ffec68;color:#6b5a00;white-space:nowrap;
   padding:7px 15px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:.06em;
-  box-shadow:0 6px 18px rgba(0,0,0,.12)}
-@media(max-width:640px){.mk-back span{display:none}.mk-back{padding:12px;left:12px;bottom:12px}}
+  box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;pointer-events:none}
+.mk-dock:hover .mk-tag,.mk-dock:focus-within .mk-tag{opacity:1;transform:none}
+@media(max-width:640px){.mk-tag,.mk-back span{display:none}.mk-back{padding:12px}
+  .mk-dock{left:12px;bottom:12px}.mk-dock--raised{bottom:88px}}
 
 
   body { background: var(--lav-2); }
@@ -762,8 +779,8 @@ table.nclc td:first-child { font-weight: 800; }
   .panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-sm); }
   .gate { max-width: 420px; margin: 80px auto; }
   .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
-  .toolbar input, .toolbar select { padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; font-weight: 600; }
-  .toolbar input { min-width: 220px; }
+  .toolbar input, .toolbar select { padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; font-weight: 600; font-size: 15px; }
+  .toolbar input { flex: 1 1 280px; min-width: 0; }
   .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
   .mini { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
   .mini b { display: block; font-size: 26px; letter-spacing: -.02em; }
@@ -778,15 +795,32 @@ table.nclc td:first-child { font-weight: 800; }
   .b-paid { background: #dcfbe9; color: #07803f; }
   .b-rejected { background: #ffeceb; color: #c0281a; }
   td select { padding: 7px 10px; border: 1.5px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 700; background: #fff; }
+  td select.b-new, td select.b-contacted, td select.b-paid, td select.b-rejected { border-color: transparent; }
+  .muted { color: var(--ink-soft); }
+  .pager { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ink-soft); }
+  .pager__btns { display: flex; gap: 8px; }
+  .pager .btn { padding: 9px 16px; font-size: 14px; }
   .del { background: #ffeceb; color: #c0281a; border-radius: 10px; padding: 7px 11px; font-weight: 800; font-size: 13px; }
   .wrap-scroll { overflow-x: auto; }
   .empty { text-align: center; padding: 50px 20px; color: var(--ink-soft); }
-  @media (max-width: 760px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 760px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .admin-top h1 { font-size: 17px; }
+    .panel { padding: 16px; }
+    /* Mobil: jadval qatorlari kartochkaga aylanadi */
+    .wrap-scroll { overflow: visible; }
+    table.leads thead { display: none; }
+    table.leads, table.leads tbody, table.leads tr, table.leads td { display: block; width: 100%; }
+    table.leads tr { border: 1px solid var(--line); border-radius: 16px; padding: 8px 14px; margin-bottom: 12px; }
+    table.leads td { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 7px 0; border-bottom: 1px dashed var(--line); text-align: right; }
+    table.leads td:last-child { border-bottom: none; justify-content: flex-end; }
+    table.leads td[data-label]::before { content: attr(data-label); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); text-align: left; }
+    table.leads tr:hover td { background: none; }
+  }
 
 </style>
 </head>
 <body>
-<div class="mk-tag">MOCKUP · Admin · Arizalar</div>
 <div class="admin-top"><div class="container">
   <span class="logo__mark">TCF</span><h1>Obuna arizalari</h1><span class="spacer"></span>
   <a class="btn btn--yellow" href="#">CSV yuklab olish</a>
@@ -794,7 +828,7 @@ table.nclc td:first-child { font-weight: 800; }
 </div></div>
 <div class="container" style="padding-top:26px;padding-bottom:90px">
   <div class="cards">
-    <div class="mini"><b>18</b><small>Ko'rsatilgan</small></div>
+    <div class="mini"><b>18</b><small>Jami arizalar</small></div>
     <div class="mini"><b style="color:#0072b3">7</b><small>Yangi</small></div>
     <div class="mini"><b style="color:#8a7300">5</b><small>Bog'lanildi</small></div>
     <div class="mini"><b style="color:#07803f">4</b><small>To'lagan</small></div>
@@ -802,76 +836,76 @@ table.nclc td:first-child { font-weight: 800; }
   <div class="panel">
     <div class="toolbar">
       <input type="search" placeholder="Ism yoki telefon bo'yicha qidirish…">
-      <select><option>Barcha holatlar</option></select>
+      <select><option>Barcha holatlar</option><option>Yangi</option><option>Bog'lanildi</option><option>To'lagan</option><option>Rad etilgan</option></select>
       <button class="btn btn--ghost">Yangilash</button>
     </div>
     <div class="wrap-scroll"><table class="leads">
       <thead><tr><th>#</th><th>Sana</th><th>Ism</th><th>Telefon</th><th>Tarif</th>
         <th>Daraja</th><th>Til</th><th>Holat</th><th></th></tr></thead>
       <tbody><tr>
-      <td>18</td><td style="white-space:nowrap;color:var(--ink-soft)">29.09.26 14:22</td>
-      <td><b>Dilnoza Rahimova</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 90 123 45 67</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">premium</span></td>
-      <td>B1</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
-      <td><span class="badge b-new" style="margin-right:6px">Yangi</span>
-        <select class="st"><option>Yangi</option></select></td>
+      <td data-label="#">18</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">29.09.26 14:22</td>
+      <td data-label="Ism"><b>Dilnoza Rahimova</b></td>
+      <td data-label="Telefon"><a href="tel:+998901234567" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 90 123 45 67</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">premium</span></td>
+      <td data-label="Daraja">B1</td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
+      <td data-label="Holat"><select class="st b-new" aria-label="Holat"><option selected>Yangi</option><option>Bog'lanildi</option><option>To'lagan</option><option>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr><tr>
-      <td>17</td><td style="white-space:nowrap;color:var(--ink-soft)">29.09.26 12:05</td>
-      <td><b>Javohir Mirzayev</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 93 447 18 22</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
-      <td>A2</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
-      <td><span class="badge b-new" style="margin-right:6px">Yangi</span>
-        <select class="st"><option>Yangi</option></select></td>
+      <td data-label="#">17</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">29.09.26 12:05</td>
+      <td data-label="Ism"><b>Javohir Mirzayev</b></td>
+      <td data-label="Telefon"><a href="tel:+998934471822" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 93 447 18 22</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
+      <td data-label="Daraja">A2</td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
+      <td data-label="Holat"><select class="st b-new" aria-label="Holat"><option selected>Yangi</option><option>Bog'lanildi</option><option>To'lagan</option><option>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr><tr>
-      <td>16</td><td style="white-space:nowrap;color:var(--ink-soft)">28.09.26 19:40</td>
-      <td><b>Малика Саидова</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 97 330 55 09</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
-      <td>B2</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">ru</td>
-      <td><span class="badge b-contacted" style="margin-right:6px">Bog'lanildi</span>
-        <select class="st"><option>Bog'lanildi</option></select></td>
+      <td data-label="#">16</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">28.09.26 19:40</td>
+      <td data-label="Ism"><b>Малика Саидова</b></td>
+      <td data-label="Telefon"><a href="tel:+998973305509" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 97 330 55 09</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
+      <td data-label="Daraja">B2</td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">ru</td>
+      <td data-label="Holat"><select class="st b-contacted" aria-label="Holat"><option>Yangi</option><option selected>Bog'lanildi</option><option>To'lagan</option><option>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr><tr>
-      <td>15</td><td style="white-space:nowrap;color:var(--ink-soft)">28.09.26 16:11</td>
-      <td><b>Aziz Karimov</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 90 777 12 34</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">start</span></td>
-      <td>none</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
-      <td><span class="badge b-paid" style="margin-right:6px">To'lagan</span>
-        <select class="st"><option>To'lagan</option></select></td>
+      <td data-label="#">15</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">28.09.26 16:11</td>
+      <td data-label="Ism"><b>Aziz Karimov</b></td>
+      <td data-label="Telefon"><a href="tel:+998907771234" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 90 777 12 34</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">start</span></td>
+      <td data-label="Daraja"><span class="muted">Boshlamagan</span></td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
+      <td data-label="Holat"><select class="st b-paid" aria-label="Holat"><option>Yangi</option><option>Bog'lanildi</option><option selected>To'lagan</option><option>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr><tr>
-      <td>14</td><td style="white-space:nowrap;color:var(--ink-soft)">28.09.26 09:58</td>
-      <td><b>Nilufar Tosheva</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 94 201 66 40</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">premium</span></td>
-      <td>B1</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
-      <td><span class="badge b-paid" style="margin-right:6px">To'lagan</span>
-        <select class="st"><option>To'lagan</option></select></td>
+      <td data-label="#">14</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">28.09.26 09:58</td>
+      <td data-label="Ism"><b>Nilufar Tosheva</b></td>
+      <td data-label="Telefon"><a href="tel:+998942016640" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 94 201 66 40</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">premium</span></td>
+      <td data-label="Daraja">B1</td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
+      <td data-label="Holat"><select class="st b-paid" aria-label="Holat"><option>Yangi</option><option>Bog'lanildi</option><option selected>To'lagan</option><option>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr><tr>
-      <td>13</td><td style="white-space:nowrap;color:var(--ink-soft)">27.09.26 21:30</td>
-      <td><b>Sardor Yusupov</b></td>
-      <td><a href="#" style="font-weight:700;color:var(--violet)">+998 91 555 03 17</a></td>
-      <td><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
-      <td>A1</td>
-      <td style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
-      <td><span class="badge b-rejected" style="margin-right:6px">Rad etilgan</span>
-        <select class="st"><option>Rad etilgan</option></select></td>
+      <td data-label="#">13</td><td data-label="Sana" style="white-space:nowrap;color:var(--ink-soft)">27.09.26 21:30</td>
+      <td data-label="Ism"><b>Sardor Yusupov</b></td>
+      <td data-label="Telefon"><a href="tel:+998915550317" style="font-weight:700;color:var(--violet);white-space:nowrap">+998 91 555 03 17</a></td>
+      <td data-label="Tarif"><span class="badge" style="background:var(--lav);color:var(--ink)">standard</span></td>
+      <td data-label="Daraja">A1</td>
+      <td data-label="Til" style="text-transform:uppercase;font-weight:800;font-size:12px">uz</td>
+      <td data-label="Holat"><select class="st b-rejected" aria-label="Holat"><option>Yangi</option><option>Bog'lanildi</option><option>To'lagan</option><option selected>Rad etilgan</option></select></td>
       <td><button class="del">O'chirish</button></td></tr></tbody></table></div>
+    <div class="pager"><span>1–6 / 18 ta ariza</span>
+      <div class="pager__btns"><button class="btn btn--ghost" disabled>‹ Oldingi</button><button class="btn btn--ghost">Keyingi ›</button></div>
+    </div>
   </div>
 </div>
 
+<div class="mk-dock">
 <a href="index.html" class="mk-back" title="Barcha oynalar">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
        stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M19 12H5M11 18l-6-6 6-6"/></svg>
   <span>Barcha oynalar</span>
 </a>
+<span class="mk-tag">MOCKUP · Admin · Arizalar</span>
+</div>
 
 <script>
 </script>

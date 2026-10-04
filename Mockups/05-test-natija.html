@@ -163,7 +163,7 @@ p { margin: 0; }
 .nav.is-stuck { border-bottom-color: var(--line); box-shadow: 0 4px 20px rgba(40,0,77,.05); }
 .nav__inner { height: var(--nav-h); display: flex; align-items: center; gap: 24px; }
 
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -.02em; white-space: nowrap; min-width: 0; }
 .logo__mark {
   width: 38px; height: 38px; border-radius: 11px;
   background: linear-gradient(140deg, var(--blue), var(--violet));
@@ -477,6 +477,7 @@ table.nclc td:first-child { font-weight: 800; }
 .footer p { font-size: 15px; max-width: 320px; }
 .footer h4 { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: #fff; margin-bottom: 16px; }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.footer li { font-size: 15px; }
 .footer a { font-size: 15px; transition: color .15s; }
 .footer a:hover { color: var(--yellow); }
 .footer__social { display: flex; gap: 10px; margin-top: 14px; }
@@ -552,6 +553,11 @@ table.nclc td:first-child { font-weight: 800; }
   .cta { padding: 44px 24px; border-radius: var(--radius-lg); }
   .lead-form { padding: 22px 20px; }
   .logo__text-full { display: none; }
+  .container { padding-inline: 16px; }
+  .nav__inner { gap: 12px; }
+  .nav__right { gap: 8px; }
+  .logo { font-size: 17px; }
+  .lang button { padding: 7px 9px; }
   .float-card { padding: 10px 13px; font-size: 13px; }
   .tg-fab { width: 52px; height: 52px; right: 16px; bottom: 16px; }
 }
@@ -699,7 +705,7 @@ table.nclc td:first-child { font-weight: 800; }
 .res-hero::before { content: ''; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,.1); top: -150px; right: -70px; }
 .res-hero > * { position: relative; z-index: 1; }
 .res-nclc { font-size: clamp(56px, 13vw, 88px); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
-.res-nclc small { font-size: 22px; font-weight: 800; opacity: .85; }
+.res-nclc small { font-size: 22px; font-weight: 800; opacity: .85; letter-spacing: .04em; margin-right: 4px; }
 .res-hero h2 { font-size: 20px; opacity: .9; font-weight: 700; margin-bottom: 8px; }
 .res-verdict { margin-top: 18px; background: rgba(255,255,255,.16); border-radius: 16px; padding: 14px 20px; font-size: 15.5px; font-weight: 700; display: inline-block; }
 
@@ -733,7 +739,8 @@ table.nclc td:first-child { font-weight: 800; }
 @media (max-width: 720px) {
   .t-picks { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
-  .t-bar__title small { display: none; }
+  .t-bar__title { display: none; }
+  .t-bar__mid { gap: 8px; min-width: 0; }
   .t-bar__in { gap: 10px; height: 60px; }
   .t-timer { font-size: 15px; padding: 7px 13px; }
   .t-count { font-size: 13px; }
@@ -741,23 +748,32 @@ table.nclc td:first-child { font-weight: 800; }
   .t-stage { padding-top: 26px; }
   .rev__a { flex-direction: column; gap: 2px; }
 }
+@media (max-width: 480px) {
+  .t-count > span { display: none; }
+  .t-timer { padding: 7px 11px; gap: 6px; }
+  .t-foot .btn { padding: 14px 22px; }
+}
 
 
-/* --- mockup navigatsiyasi --- */
-.mk-back{position:fixed;left:18px;bottom:18px;z-index:999;display:inline-flex;align-items:center;
+/* --- mockup navigatsiyasi (sahifa tugmalarini yopmasligi uchun pastki chap burchakda) --- */
+.mk-dock{position:fixed;left:18px;bottom:18px;z-index:999;display:flex;align-items:center;gap:8px;pointer-events:none}
+.mk-dock>*{pointer-events:auto}
+.mk-dock--raised{bottom:96px}
+.mk-back{display:inline-flex;align-items:center;
   gap:8px;background:#28004d;color:#fff;padding:11px 18px;border-radius:999px;font-weight:800;
   font-size:14px;text-decoration:none;box-shadow:0 10px 28px rgba(40,0,77,.35);transition:transform .18s}
 .mk-back:hover{transform:translateY(-2px)}
-.mk-tag{position:fixed;right:18px;top:18px;z-index:999;background:#ffec68;color:#6b5a00;
+.mk-tag{position:absolute;left:0;bottom:calc(100% + 8px);background:#ffec68;color:#6b5a00;white-space:nowrap;
   padding:7px 15px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:.06em;
-  box-shadow:0 6px 18px rgba(0,0,0,.12)}
-@media(max-width:640px){.mk-back span{display:none}.mk-back{padding:12px;left:12px;bottom:12px}}
+  box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;pointer-events:none}
+.mk-dock:hover .mk-tag,.mk-dock:focus-within .mk-tag{opacity:1;transform:none}
+@media(max-width:640px){.mk-tag,.mk-back span{display:none}.mk-back{padding:12px}
+  .mk-dock{left:12px;bottom:12px}.mk-dock--raised{bottom:88px}}
 
 
 </style>
 </head>
 <body class="t-page">
-<div class="mk-tag">MOCKUP · Test · Natijalar</div>
 <div class="t-bar"><div class="container t-bar__in">
   <a href="01-landing.html" class="logo"><span class="logo__mark">TCF</span>
     <span class="t-bar__title">TCF Canada Pro<small>CE</small></span></a>
@@ -802,7 +818,7 @@ table.nclc td:first-child { font-weight: 800; }
         <span class="rev__q">10. Quelle idée l'auteur défend-il ?</span></div>
       <div class="rev__a bad"><em data-i18n="test.your">Sizning javobingiz</em><span style="color:#a49fba" data-i18n="test.noanswer">Javob berilmadi</span></div>
       <div class="rev__a good"><em data-i18n="test.right">To'g'ri javob</em><span>C. Le manque d'accompagnement pénalise des candidats compétents.</span></div>
-      <div class="rev__extra"><b data-i18n="test.transcript">Audio matni</b>Loin de constituer une simple formalité administrative, l'évaluation linguistique conditionne l'accès à l'emploi qualifié.</div>
+      <div class="rev__extra"><b data-i18n="test.passage">Matndan parcha</b>Loin de constituer une simple formalité administrative, l'évaluation linguistique conditionne l'accès à l'emploi qualifié.</div>
       <div class="rev__extra"><b data-i18n="test.why">Izoh</b>«faute d'accompagnement» = yordam yo'qligi sababli; to'siqlar malakaga aloqador emas.</div>
     </div>
   <div class="cta" style="margin-top:34px">
@@ -814,12 +830,15 @@ table.nclc td:first-child { font-weight: 800; }
   </div>
 </main>
 
+<div class="mk-dock">
 <a href="index.html" class="mk-back" title="Barcha oynalar">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
        stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M19 12H5M11 18l-6-6 6-6"/></svg>
   <span>Barcha oynalar</span>
 </a>
+<span class="mk-tag">MOCKUP · Test · Natijalar</span>
+</div>
 <script>/**
  * i18n.js — sayt matnlari uch tilda
  * ---------------------------------
@@ -1040,6 +1059,7 @@ window.I18N = {
     'test.right': 'To‘g‘ri javob',
     'test.noanswer': 'Javob berilmadi',
     'test.transcript': 'Audio matni',
+    'test.passage': 'Matndan parcha',
     'test.why': 'Izoh',
     'test.again': 'Boshqa testni yechish',
     'test.cta_h': 'Bu — atigi demo. To‘liq baza sizni kutmoqda.',
@@ -1269,6 +1289,7 @@ window.I18N = {
     'test.right': 'Верный ответ',
     'test.noanswer': 'Ответ не дан',
     'test.transcript': 'Текст аудио',
+    'test.passage': 'Фрагмент текста',
     'test.why': 'Пояснение',
     'test.again': 'Пройти другой тест',
     'test.cta_h': 'Это всего лишь демо. Полная база ждёт вас.',
@@ -1498,6 +1519,7 @@ window.I18N = {
     'test.right': 'Bonne réponse',
     'test.noanswer': 'Pas de réponse',
     'test.transcript': 'Transcription',
+    'test.passage': 'Extrait du texte',
     'test.why': 'Explication',
     'test.again': 'Faire un autre test',
     'test.cta_h': 'Ce n’est qu’une démo. La banque complète vous attend.',
